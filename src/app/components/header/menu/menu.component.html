@@ -12,10 +12,14 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ms-auto mb-2 me-4 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <!--<a class="nav-link active" aria-current="page" href="#">Home</a>-->
+          <app-mat-button [btnId]="'homeBtn'"
+          [buttonLabel]="'Home'" [btnClass]="'nav-link active d-flex align-items-center'"
+          [matIcon]="'home'" [btnHref]="'/'">
+          </app-mat-button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Web</a>
+          <a class="nav-link" href="#web">Web</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Videos</a>

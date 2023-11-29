@@ -1,0 +1,26 @@
+<div class="">
+  <div class="row g-0">
+    <div *ngFor="let cItem of cardList; index as j" class="col-md-6 col-lg-4 my-2 d-flex align-items-stretch">
+      <div class="card text-dark bg-light ">
+        <div class="card-header">
+          {{cItem.heading}}
+        </div>
+        <div class="card-body">
+          <img [src]="cItem.imgSrc" class="card-img-top" alt="{{cItem.imgAlt}}">
+          <p class="card-text mt-2">{{cItem.desc}}
+          </p>
+          <p class="card-text" *ngIf="cItem.desc2">
+            {{cItem.desc2}}
+          </p>
+        </div>
+        <div class="card-footer">
+          <a *ngIf="cItem.link" class="btn btn-secondary" href="{{cItem.link}}" target="_blank">
+            {{cItem.linkText}}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

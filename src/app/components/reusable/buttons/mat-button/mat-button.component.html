@@ -1,0 +1,19 @@
+<ng-template *ngIf="!btnHref; else buttonTemplate">
+  <a [href]="btnHref"
+     [class]="btnClass"
+     [id]="btnId">
+    <span aria-hidden="false" [attr.aria-label]="matIcon + ' icon'"
+          [class]="'material-icons me-2'">{{matIcon}}</span>
+    <span>{{buttonLabel}}</span>
+  </a>
+</ng-template>
+
+<ng-template #buttonTemplate>
+  <button #btnInstance [class]="btnClass"
+          [id]="buttonLabel"
+          (click)="emitBtn1Action(btnInstance)">
+    <span aria-hidden="false" [attr.aria-label]="matIcon + ' icon'"
+          [class]="'material-icons me-2'">{{matIcon}}</span>
+    <span>{{buttonLabel}}</span>
+  </button>
+</ng-template>

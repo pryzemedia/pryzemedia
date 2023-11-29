@@ -1,0 +1,58 @@
+
+<div id="{{carouselID}}" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <ng-container *ngFor="let b1 of carouselList; index as i">
+      <ng-container *ngIf="i == 0; else notFirstItem">
+        <button  type="button"
+                [attr.data-bs-target]="'#' + carouselID"
+                [attr.data-bs-slide-to]="i"
+                [attr.aria-label]="'Slide_' + 1"
+                 class = "active"
+                 aria-current="true" >
+          <span class="d-none">{{b1.heading}}</span>
+        </button>
+      </ng-container>
+      <ng-template #notFirstItem>
+        <button  type="button"
+                 [attr.data-bs-target]="'#' + carouselID"
+                 [attr.data-bs-slide-to]="i"
+                 [attr.aria-label]="'Slide_' + 1">
+          <span class="d-none">{{b1.heading}}</span>
+        </button>
+      </ng-template>
+
+    </ng-container>
+
+  </div>
+  <div class="carousel-inner">
+    <div *ngFor="let cItem of carouselList; index as j"
+         [ngClass] = "j < 1 ? 'carousel-item active' : 'carousel-item '">
+      <div class="cards-wrapper">
+        <div class="card col-6">
+          <img [src]="cItem.imgSrc" class="card-img-top" alt="{{cItem.imgAlt}}">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{cItem.heading}}
+            </h5>
+            <p class="card-text">{{cItem.desc}}
+            </p>
+            <p class="card-text" *ngIf="cItem.desc2">
+              {{cItem.desc2}}
+            </p>
+            <a *ngIf="cItem.link" class="btn btn-primary" href="{{cItem.link}}" target="_blank">
+              {{cItem.linkText}}
+            </a>
+        </div>
+      </div>
+
+    </div>
+
+  <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + carouselID" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + carouselID" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

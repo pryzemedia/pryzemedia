@@ -9,9 +9,44 @@ body {
   /*
   font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;*/
 }
+
+#navbarMenu .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: #FFE747;
+}
+
+#navbar{
+  border-bottom: 1px solid #FFFCE5;
+}
+/**/
+/*
+#navbarMenu .navbar-nav .nav-item {
+
+  padding: 0px 20px;
+}
+
+#navbarMenu .navbar-nav .nav-item .nav-link {
+
+  padding: 10px 0;
+}
+
+#navbarMenu .navbar-nav .nav-item .active  {
+  border-bottom: 2px solid red;
+} */
 /*Colors*/
 .bg-darker{
-  background-color: #18191a;
+  background-color: #18191a !important;
+}
+
+.bg-purple-dark{
+  background-color: #382786 !important;
+}
+
+.bg-purple-darker{
+  background-color: #140024 !important;
+}
+
+.bg-blue-darker{
+  background-color: #141724 !important;
 }
 
 .featurette-heading {
@@ -32,11 +67,19 @@ hr:not([size]) {
   margin: 2rem 0;
 }
 
+.bd-example {
+  position: relative;
+  padding: .2rem;
+  margin: 1rem -0.75rem 0;
+  border: solid #dee2e6;
+  border-width: 1px 0 0;
+}
+
 #hero{
   width: 100%;
   height: 80vh;
   /*background: url(/assets/img/home_background.jpg) no-repeat center center fixed;*/
-  background: url(/assets/img/home_background.jpg) no-repeat center center;
+  background: url(assets/img/home_background.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -92,8 +135,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   top: 50%;
   transform: translateY(-50%);*/
 }
+
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.modal.in .modal-dialog {
+  -webkit-transform: unset;
+  -ms-transform: unset;
+  transform: unset;
+}
+
 @media (min-width: 768px) {
 
+}
+
+@media (min-width: 576px) {
+  .bd-example {
+    padding: .1rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
 }
 
 @media (min-width: 440em) {

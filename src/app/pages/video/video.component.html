@@ -1,1 +1,17 @@
-<p>video works!</p>
+<section class="video bg-blue-darker pt-5">
+  <div class="container">
+    <div class="row text-white">
+      <div class="col my-5">
+        <h2 class="ms-3 featurette-heading">Video Portfolio</h2>
+        <hr class="title-divider" />
+        <app-multi-cards
+          [cardList]="videoPortfolio"
+          [headerColorClass]="'bg-purple-dark'"
+          [headerTextColor]="'text-light'"
+          [videoModal]="true"
+        >
+        </app-multi-cards>
+      </div>
+    </div>
+  </div>
+</section>

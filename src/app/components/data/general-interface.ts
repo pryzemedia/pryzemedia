@@ -1,3 +1,5 @@
+import {SafeResourceUrl} from "@angular/platform-browser";
+
 export interface Button {
   id: string,
   isDisabled?:boolean,
@@ -16,5 +18,7 @@ export interface showcaseItem {
   desc: string;
   desc2?: string;
   link?: string;
+  youtube?: SafeResourceUrl;
   linkText?: string;
+  isVideo?: boolean;
 }

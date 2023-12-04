@@ -5,28 +5,36 @@
     </h1>
 
     <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navbarText"
+            data-bs-toggle="collapse" data-bs-target="#navbarMenu"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
+    <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ms-auto mb-2 me-4 mb-lg-0">
         <li class="nav-item">
           <!--<a class="nav-link active" aria-current="page" href="#">Home</a>-->
           <app-mat-button [btnId]="'homeBtn'"
-          [buttonLabel]="'Home'" [btnClass]="'nav-link active d-flex align-items-center'"
-          [matIcon]="'home'" [btnHref]="'/'">
+          [buttonLabel]="'Home'" [btnClass]="'nav-link d-flex align-items-center'"
+          [matIcon]="'home'" [btnHref]="'#home'">
           </app-mat-button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#web">Web</a>
+          <!--<a class="nav-link" href="#web">Web</a>-->
+          <app-mat-button [btnId]="'webBtn'"
+                          [buttonLabel]="'Web'" [btnClass]="'nav-link d-flex align-items-center'"
+                          [matIcon]="'web'" [btnHref]="'#web'">
+          </app-mat-button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Videos</a>
+          <!--<a class="nav-link" href="#">Videos</a>-->
+          <app-mat-button [btnId]="'videoBtn'"
+                          [buttonLabel]="'Video'" [btnClass]="'nav-link d-flex align-items-center'"
+                          [matIcon]="'smart_display'" [btnHref]="'#video'">
+          </app-mat-button>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link" href="#">Illustrations</a>
-        </li>
+        </li>-->
       </ul>
   </div>
 

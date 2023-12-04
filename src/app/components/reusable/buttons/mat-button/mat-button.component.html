@@ -1,4 +1,4 @@
-<ng-template *ngIf="!btnHref; else buttonTemplate">
+<ng-container *ngIf="btnHref.length > 0; else buttonTemplate">
   <a [href]="btnHref"
      [class]="btnClass"
      [id]="btnId">
@@ -6,7 +6,7 @@
           [class]="'material-icons me-2'">{{matIcon}}</span>
     <span>{{buttonLabel}}</span>
   </a>
-</ng-template>
+</ng-container>
 
 <ng-template #buttonTemplate>
   <button #btnInstance [class]="btnClass"

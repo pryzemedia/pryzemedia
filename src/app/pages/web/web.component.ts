@@ -14,8 +14,19 @@ export class WebComponent implements OnInit{
 
   webPortfolio: showcaseItem[] = [];
 
-  initCarouselData(): void{
+  InitWebData(): void{
     this.webPortfolio = [
+      {
+        imgSrc: "assets/img/web/cm-home.png",
+        imgAlt: "Screenshot of the CounterMeasures HTML Mock-up",
+        heading: "CounterMeasures HTML Mock-up Project",
+        desc: "Crafted a bespoke HTML mock-up, meticulously tailored to fulfill the unique needs of the client. " +
+          "The mock-up is intricately designed, adhering to the latest design web standards and leveraging the " +
+          "Bootstrap 5 HTML Framework. This served as the foundation for constructing the Angular application.",
+        desc2: "Utilized Technologies:  HTML5/CSS, Bootstrap 5, Vanilla Javascript, and the Chart.js plug-in",
+        link: "https://pryzemedia.com/clients/alion/cm4/CM/index.html",
+        linkText: "View Demo"
+      },
       {
         imgSrc: "assets/img/web/mcafee.jpg",
         imgAlt: "Screenshot of the McAfee website",
@@ -30,15 +41,6 @@ export class WebComponent implements OnInit{
         linkText: "View Website"
       },
       {
-        imgSrc: "assets/img/web/spinning-wheel.jpg",
-        imgAlt: "Screenshot of the Spinning Wheel Game",
-        heading: "Interactive Learning Activity: Spinning Wheel Game",
-        desc: "Crafted as a dynamic learning component seamlessly integrated into McAfee SCORM courses.",
-        desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript, jQuery",
-        link: "http://pryzemedia.com/clients/mcafee/gamification/spinning-wheel/",
-        linkText: "View Demo"
-      },
-      {
         imgSrc: "assets/img/web/scenario.jpg",
         imgAlt: "Screenshot of the McAfee Scenario Game",
         heading: "Sales Training Scenario Game Demo",
@@ -47,6 +49,16 @@ export class WebComponent implements OnInit{
           "navigate objections, choosing from three response options and receiving customized feedback.",
         desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript, jQuery",
         link: "http://pryzemedia.com/clients/mcafee/gamification/scenario",
+        linkText: "View Demo"
+      },
+      {
+        imgSrc: "assets/img/web/spinning-wheel.jpg",
+        imgAlt: "Screenshot of the Spinning Wheel Game",
+        heading: "Interactive Learning Activity: Spinning Wheel Game",
+        desc: "Crafted as a dynamic learning component seamlessly integrated into McAfee SCORM courses. " +
+          "Warning, this demo has music. Be prepared to turn down the volume on your device.",
+        desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript, jQuery",
+        link: "http://pryzemedia.com/clients/mcafee/gamification/spinning-wheel/",
         linkText: "View Demo"
       },
       {
@@ -89,6 +101,6 @@ export class WebComponent implements OnInit{
     ]
   }
   ngOnInit() :void{
-    this.initCarouselData();
+    this.InitWebData();
   }
 }

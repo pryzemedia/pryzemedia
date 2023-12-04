@@ -12,12 +12,12 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" [id]="'flush-heading_' + j">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          [attr.data-bs-target]="'#flush-collapse_' + j" aria-expanded="false"
-                          [attr.aria-controls]="'flush-collapse_' + j">
+                          [attr.data-bs-target]="'#' + uID + 'flush-collapse_' + j" aria-expanded="false"
+                          [attr.aria-controls]="uID + 'flush-collapse_' + j">
                     View Description
                   </button>
                 </h2>
-                <div [id]="'flush-collapse_' + j" class="accordion-collapse collapse"
+                <div [id]="uID + 'flush-collapse_' + j" class="accordion-collapse collapse"
                      [attr.aria-labelledby]="'flush-heading_' + j"
                      [attr.data-bs-parent]="'#accordion_' + j">
                   <div class="accordion-body">

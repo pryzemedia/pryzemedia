@@ -49,6 +49,14 @@ body {
   background-color: #141724 !important;
 }
 
+.bg-orange{
+  background-color: #fd7e14 !important;
+}
+
+.bg-blue-deep{
+  background-color: #314490 !important;;
+}
+
 .featurette-heading {
   font-weight: 300;
   line-height: 1;

@@ -18,6 +18,8 @@ export class MultiCardsComponent implements OnInit{
   @Input()
   cardList: showcaseItem[] = [];
   @Input()
+  uID: string = "web";
+  @Input()
   btnColorClass: string = "btn-secondary";
   @Input()
   headerColorClass: string = "bg-light";

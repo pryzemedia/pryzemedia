@@ -40,6 +40,6 @@ export class MatButtonComponent implements OnInit{
   }
 
   ngOnInit(){
-    console.log("btnHref = "+this.btnHref);
+    //console.log("btnHref = "+this.btnHref);
   }
 }

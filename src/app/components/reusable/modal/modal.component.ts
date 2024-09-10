@@ -52,7 +52,7 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy{
     let checkModalExists: any = document.getElementById(this.mId);
 
     if(checkModalExists){
-      console.log("Modal exists" + checkModalExists);
+      //console.log("Modal exists" + checkModalExists);
     }
 
 
@@ -60,7 +60,7 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy{
     this.modalWindow = new window.bootstrap.Modal(
       document.getElementById(this.mId)
     );
-    console.log("modal initialized");
+    //console.log("modal initialized");
 
   }
 
@@ -73,7 +73,7 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy{
   }
 
   open() {
-    console.log("Modal Component Open");
+    //console.log("Modal Component Open");
     this.modalWindow.show();
    /* this.element.style.display = 'block';
     document.body.classList.add('modal-open');*/

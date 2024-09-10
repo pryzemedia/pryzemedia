@@ -1,7 +1,7 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, AfterViewInit, Output, EventEmitter} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ModalService} from "../../../services/modal.service";
-import {SafeResourceUrl} from "@angular/platform-browser";
+//import {SafeResourceUrl} from "@angular/platform-browser";
 import {showcaseItem} from "../../data/general-interface";
 
 declare var window: any;

@@ -1,7 +1,6 @@
-import {Component, Input, OnInit, ViewChild, SimpleChange, ElementRef, OnDestroy} from '@angular/core';
+import {Component, Input, OnInit, ViewChild, SimpleChange} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {showcaseItem} from "../../data/general-interface";
-import {BrowserModule} from "@angular/platform-browser";
 import {ModalComponent} from "../modal/modal.component";
 import {ModalService} from "../../../services/modal.service";
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
@@ -9,7 +8,7 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 @Component({
   selector: 'app-multi-cards',
   standalone: true,
-  imports: [CommonModule, BrowserModule, ModalComponent],
+  imports: [CommonModule, ModalComponent],
   templateUrl: './multi-cards.component.html',
   styleUrls: ['./multi-cards.component.css']
 })

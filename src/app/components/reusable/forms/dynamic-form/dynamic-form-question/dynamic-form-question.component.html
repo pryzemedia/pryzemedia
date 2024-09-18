@@ -1,0 +1,62 @@
+<div [formGroup]="form">
+  <div [class]="'row my-2'">
+    <label [attr.for]="question.key"
+           [ngClass]="question.required ? 'form-label required ' + labelClass : 'form-label ' + labelClass">
+      {{question.label}} <span *ngIf="question.required" class="asterisk">*</span>
+    </label>
+
+    <div [ngClass]="question.splitView ? 'col-md-4' : ''" [ngSwitch]="question.controlType">
+
+      <input [id]="question.key" *ngSwitchCase="'checkbox'" [formControlName]="question.key" type="checkbox">
+
+      <div *ngSwitchCase="'radio'" [formGroup]="form" [class]="inputClass">
+        <div *ngFor="let opt of question.options" class="d-flex flex-fill">
+          <input type="radio" [formControlName]="question.key.toString()" [value]="opt.key" [id]="question.key + '_' + opt.key"
+                 [class]="'btn-check'" [name]="question.key + '_radios'">
+          <label [attr.for]="question.key + '_' + opt.key"
+                 [ngClass]="opt.color ? 'flex-fill btn btn-outline-' + opt.color : 'flex-fill'">{{opt.value}}</label>
+
+        </div>
+
+      </div>
+
+      <input [id]="question.key" *ngSwitchCase="'password'" [formControlName]="question.key" type="password">
+
+      <input [id]="question.key" *ngSwitchCase="'number'" [formControlName]="question.key" type="number">
+
+      <input [id]="question.key" *ngSwitchCase="'tel'" [formControlName]="question.key" type="tel">
+
+      <input [id]="question.key" *ngSwitchCase="'hidden'" [formControlName]="question.key" type="hidden">
+
+      <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
+             [id]="question.key" [type]="question.type" [disabled]="question.disabled" class="form-control">
+
+      <input [id]="question.key" *ngSwitchCase="'date'" [formControlName]="question.key"
+             type="date" [disabled]="question.disabled" class="form-control">
+
+      <textarea [id]="question.key" *ngSwitchCase="'textarea'" [formControlName]="question.key"
+                [disabled]="question.disabled" class="form-control"></textarea>
+
+      <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key"
+              [disabled]="question.disabled" class="form-select">
+        <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+      </select>
+
+    </div>
+  </div>
+
+
+
+  <!--<div class="my-1 errorMessage alert alert-danger" *ngIf="submitted && !isValid">{{question.label}} is required</div>
+  <div class="my-1 errorMessage alert alert-danger"
+       *ngIf="submitted && !isValid">{{ getErrorMessage(form.controls[question.key]) }}</div>-->
+
+  <div class="my-1 errorMessage alert alert-danger"
+       *ngIf="(submitted && !isValid) || (showErrors && !isValid)">
+    <ul class="mb-0">
+      <li *ngFor="let errorMessage of getErrorMessage(form.controls[question.key])">{{ errorMessage }}</li>
+    </ul>
+  </div>
+
+
+</div>

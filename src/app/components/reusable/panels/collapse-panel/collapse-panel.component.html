@@ -1,0 +1,21 @@
+<div class="card {{cardClass}}">
+  <div [class]="'card-header ' + headerClass">
+    <a data-bs-toggle="collapse" [href]="'#' + expandID" role="button"
+       aria-expanded="false" [attr.aria-controls]="expandID" class="d-flex justify-content-between {{addCollapsed}}">
+    <span class="d-flex align-items-center">
+      <mat-icon *ngIf="matHeaderIcon.length > 0;" class="me-2 expand_more" fontIcon="{{matHeaderIcon}}"></mat-icon>
+      {{headerLabel}}</span>
+      <mat-icon aria-label="Expand More" class="expand_more" fontIcon="expand_more"></mat-icon>
+    </a>
+  </div>
+
+  <div #collapsePanel id="{{expandID}}" class="collapse {{showDefault}} {{collapseClass}}">
+    <div id="{{expandID}}Info" [ngClass]="!hideContent ? 'd-none' : 'visible'" *ngIf="!disableToggle">
+      <h3 class="mt-2 ms-2">{{toggleMessage}}</h3>
+    </div>
+    <div id="{{expandID}}Data" [ngClass]="!hideContent ? containerClass + '' : containerClass + ' d-none'">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+

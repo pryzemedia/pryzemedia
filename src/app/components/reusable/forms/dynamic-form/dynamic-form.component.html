@@ -1,0 +1,33 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form"><!---->
+
+    <div [formGroup]="form" class="row">
+      <!--[ngClass]="question.inCard ? question.parentDivClass : 'form-row'"-->
+      <div *ngFor="let question of questions" [class]="question.parentDivClass">
+
+        <div *ngIf="question.inCard else noCard" class="card">
+          <div class="card-body">
+              <app-question [question]="question" [form]="form" [submitted]="submitted"
+                            [showErrors]="showErrors"></app-question>
+          </div>
+        </div>
+
+
+        <ng-template #noCard>
+            <app-question [question]="question" [form]="form" [submitted]="submitted"
+                          [showErrors]="showErrors"></app-question>
+        </ng-template>
+      </div>
+
+<!--      <div class="form-row">-->
+<!--        &lt;!&ndash;<button type="submit" [disabled]="!form.valid">Save</button>&ndash;&gt;-->
+<!--        <button type="submit" class="mt-2">Save</button>-->
+<!--      </div>-->
+    </div>
+
+  </form><!---->
+
+<!--  <div *ngIf="payLoad" class="form-row">-->
+<!--    <strong>Saved the following values</strong><br>{{payLoad}}-->
+<!--  </div>-->
+</div>

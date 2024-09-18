@@ -27,6 +27,9 @@
                     <p class="card-text" *ngIf="cItem.desc2">
                       {{cItem.desc2}}
                     </p>
+                    <p class="card-text" *ngIf="cItem.desc3">
+                      {{cItem.desc3}}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -37,8 +40,11 @@
         </div>
         <div class="card-footer">
           <div *ngIf="!videoModal; else vModalOption">
-            <a *ngIf="cItem.link" class="btn {{btnColorClass}}" href="{{cItem.link}}" target="_blank">
+            <a *ngIf="cItem.link" class="btn {{btnColorClass}} my-1 me-1" href="{{cItem.link}}" target="_blank">
               {{cItem.linkText}}
+            </a>
+            <a *ngIf="cItem.link2" class="btn {{btnColorClass}}" href="{{cItem.link2}}" target="_blank">
+              {{cItem.link2Text}}
             </a>
           </div>
           <ng-template #vModalOption>

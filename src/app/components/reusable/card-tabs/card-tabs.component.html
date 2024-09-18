@@ -1,0 +1,23 @@
+<div id="{{cardID}}" class="">
+  <div class="card-header {{accentBgClass}}">
+    <div class="row">
+      <div class="col">
+        <ul id="{{tabId}}" class="nav nav-tabs card-header-tabs" role="tablist">
+          <li class="nav-item" *ngFor="let navItem of dynamicContent">
+            <button id="{{navItem.cardID}}-tab" class="nav-link {{navItem.firstLinkOnly}}" data-bs-toggle="tab"
+                    [attr.data-bs-target]="'#' + navItem.cardID" type="button" role="tab"
+                    [attr.aria-controls]="navItem.cardID" aria-selected="true">
+              <span class="d-flex align-items-center">
+                    <mat-icon fontIcon="{{navItem.headerIcon}}" class="me-2 {{navItem.iconColorClass}}"></mat-icon>
+                {{navItem.tabText}}
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div> <!--reportDataID -->
+<div class="card-body tab-content" id="{{tabCId}}" >
+  <ng-content></ng-content>
+</div>

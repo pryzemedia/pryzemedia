@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header {{headerClass}}">
+    <a data-bs-toggle="collapse" href="#{{cardID}}" role="button"
+       aria-expanded="false" aria-controls="" class="d-flex justify-content-between">
+      <span class="d-flex align-items-center">
+        <mat-icon class="me-2" fontIcon="{{matIcon}}"></mat-icon>
+        <span>{{headerText}}</span>
+      </span>
+      <mat-icon class="expand_more" fontIcon="expand_more"></mat-icon>
+    </a>
+  </div>
+
+  <div id="{{cardID}}" class="collapse show">
+
+    <div class="card-body">
+      <div id="{{reportMsgID}}" class="visible">
+        <h3 class="mt-2 ms-2">{{headerMessage}}</h3>
+      </div>
+
+      <div id="{{reportDataID}}" [ngClass]="!hideContent ? '' : 'd-none'">
+        <div class="row mb-2" >
+          <div class="col chart-container">
+            <!-- Canvas here-->
+            <!--suppress TypeScriptValidateTypes -->
+            <canvas baseChart class="chart"
+                    [data]="barChartData"
+                    [options]="barChartOptions"
+                    [plugins]="barChartPlugins"
+                    [type]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"
+                    >
+            </canvas>
+          </div>
+        </div>
+        <div *ngIf="buttons" class=" buttonList-length {{buttonList.length}}">
+          <div *ngIf="buttonList.length > 1;">
+            <div class="row d-flex justify-content-between px-2 my-2">
+              <div *ngFor="let b1 of buttonList; index as i" class="col-auto mt-2 ">
+                <button class="btn {{b1.btnColor}} {{b1.btnClass}}"
+                        (click)="emitBtn1Action('Button = ' + b1.btnText + ' Parameter '+ i)">{{b1.btnText}}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="buttonList.length < 2;">
+            <div class="row d-flex justify-content-center">
+              <div *ngFor="let b2 of buttonList; index as i" class="col-auto mt-2 ">
+                <button class="btn {{b2.btnColor}} {{b2.btnClass}}"
+                        (click)="emitBtn1Action('Button  = ' + b2.btnText + ' Parameter ' + i)">{{b2.btnText}}
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!--reportData-->
+    </div>
+  </div>
+
+</div>

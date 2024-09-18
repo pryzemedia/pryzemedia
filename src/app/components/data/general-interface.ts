@@ -17,8 +17,11 @@ export interface showcaseItem {
   heading: string;
   desc: string;
   desc2?: string;
+  desc3?: string;
   link?: string;
   youtube?: SafeResourceUrl;
   linkText?: string;
+  link2?: string
+  link2Text?: string;
   isVideo?: boolean;
 }

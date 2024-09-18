@@ -1,0 +1,27 @@
+<div class="card {{cardClass}}">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="card-title flex-fill me-3">
+            <h3 class="fw-bold m-0">{{panelTitle}}</h3>
+          </div>
+          <div class="mt-2 me-3 flex-fill" >
+            <p>{{details_txt}}</p>
+          </div>
+          <button role="button" class="{{btnClass}} {{addCollapsed}}" data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#' + expandID"
+                  aria-expanded="false" type="button"
+                  [attr.aria-controls]="expandID" >{{hideUserInfoBtnCaption}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div #collapsePanel id="{{expandID}}" class="collapse {{showDefault}}">
+      <div id="{{expandID}}Data">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -22,10 +22,17 @@ export class WebComponent implements OnInit{
         heading: "CounterMeasures HTML Mock-up Project",
         desc: "Crafted a bespoke HTML mock-up, meticulously tailored to fulfill the unique needs of the client. " +
           "The mock-up is intricately designed, adhering to the latest design web standards and leveraging the " +
-          "Bootstrap 5 HTML Framework. This served as the foundation for constructing the Angular application.",
-        desc2: "Utilized Technologies:  HTML5/CSS, Bootstrap 5, Vanilla Javascript, and the Chart.js plug-in",
+          "Bootstrap 5 HTML Framework. This served as the foundation for constructing the Angular application." +
+          " || The Angular Prototype integrates the HTML design from the CounterMeasures mock-up into an Angular " +
+          "environment. The prototype features interactive elements, allowing users to resize and move individual " +
+          "content sections using handles on each panel, providing a flexible and dynamic user interface.",
+        desc2: "Utilized Technologies for Mock-Up:  HTML5/CSS, Bootstrap 5, Vanilla Javascript, and " +
+          "the Chart.js plug-in",
+        desc3: "Utilized Technologies in Angular Prototype: Angular 16, Material UI, Bootstrap 5, TypeScript, ChartJS",
         link: "https://pryzemedia.com/clients/alion/cm4/CM/index.html",
-        linkText: "View Demo"
+        linkText: "View HTML Mock-Up",
+        link2: "https://pryzemedia.com/clients/hii/html/angular-deploy/assessment-prototype/",
+        link2Text: "View Angular Prototype"
       },
       {
         imgSrc: "assets/img/web/mcafee.jpg",
@@ -39,6 +46,33 @@ export class WebComponent implements OnInit{
         desc2: "Utilized Technologies: Adobe Experience Manager, Bootstrap Framework, HTML5/CSS, JavaScript, and jQuery",
         link: "http://mcafee.com",
         linkText: "View Website"
+      },
+      {
+        imgSrc: "assets/img/web/signazon.jpg",
+        imgAlt: "Screenshot of the Signazon website",
+        heading: "Signazon.com Redesign & HTML5 Tool Development",
+        desc: "Collaborated with C# developers and the art director to ensure a seamless update to the Signazon " +
+          "responsive website using the Bootstrap framework, aligning with design comps. Initiated the development " +
+          "of a new HTML5 and JavaScript-based Designer tool to replace the existing Flash version. The new Designer " +
+          "utilized SVG graphics within an HTML canvas, allowing users to import, edit, and save designs from the " +
+          "original Flash application. These comprehensive updates transpired during the 2nd quarter of 2014.",
+        desc2: "Utilized Technologies: C#, HTML5, CSS, JavaScript, Bootstrap Adobe Flash, and XML data",
+        link: "https://www.signazon.com/",
+        linkText: "View Website"
+      },
+      {
+        imgSrc: "assets/img/web/semperis-dashboaard.jpg",
+        imgAlt: "Screenshot of the Semperis Enablement Dashboard",
+        heading: "Semperis Enablement Dashboard",
+        desc: "The Semperis Enablement Dashboard is a custom-built platform designed to track and analyze the training " +
+          "progress of global sales teams. This dashboard provides insights into user training completion and correlates " +
+          "course engagement with sales performance metrics, such as the number of deals closed. The project was built " +
+          "using PHP and MySQL for backend functionality, while the front-end utilized the Bootstrap framework, HTML5, " +
+          "jQuery, and AngularJS to create a responsive and intuitive user interface. This solution allows stakeholders " +
+          "to monitor training effectiveness and make data-driven decisions to optimize sales strategies.",
+        desc2: "Utilized Technologies: PHP 8, MySql, HTML5/CSS, Bootstrap 5.2.3, JavaScript, Angular JS, jQuery",
+        link: "https://nodejs-test.projectcog.com/analytics#/program/analytics",
+        linkText: "View Demo"
       },
       {
         imgSrc: "assets/img/web/scenario.jpg",
@@ -90,13 +124,16 @@ export class WebComponent implements OnInit{
         imgSrc: "assets/img/web/universityFurnishings.jpg",
         imgAlt: "Screenshot of the University Furnishings Website",
         heading: "University Furnishings Website Development",
-        desc: "During a contract with Dodd Creative, I spearheaded the creation of the University Furnishings website. " +
-          "The site, built with PHP, MySql, XHTML/CSS, and JavaScript, boasts animated headers optimized for " +
-          "seamless viewing on iPhone, iPad, and iPod Touch. Leveraging PHP and MySql, all product sections are " +
+        desc: "Developed the University Furnishings website using PHP, MySQL, " +
+          "XHTML/CSS, and JavaScript while contracted by Dodd Creative. Responsible " +
+          "for creating and managing the database, implementing back-end functionality " +
+          "for seamless data retrieval, and designing the front-end visuals and " +
+          "animations to enhance user experience. Leveraging PHP and MySql, all " +
+          "product sections are " +
           "dynamically driven by a database. Project Initiation: 07-02-2010.",
         desc2: "Utilized Technologies: PHP, MySql, XHTML/CSS, JavaScript",
-        link: "",
-        linkText: ""
+        link: "https://pryzemedia.com/universityfurnishings/index.php",
+        linkText: "View Demo"
       }
     ]
   }

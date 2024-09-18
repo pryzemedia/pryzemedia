@@ -1,0 +1,16 @@
+<ng-template #modal>
+<div class="modal-content">
+  <div class="modal-header" >
+    <h3 class="modal-title" *ngIf="title && title.length > 0" id="modal-basic-title">{{title}}</h3>
+    <button type="button" *ngIf="showXButton" class="btn-close" aria-label="Close" (click)="cancel();"></button>
+  </div>
+  <div class="modal-body">
+   <ng-content>
+   </ng-content>
+  </div>
+  <div class="mt-1 mb-2" style="text-align: center">
+    <button class="btn btn-red m-1 ps-3 pe-3" (click)="cancel()">{{noLabel}}</button>
+    <button class="btn btn-blue m-1 p-1 px-3" (click)="save()">{{yesLabel}}</button>
+  </div>
+</div>
+</ng-template>

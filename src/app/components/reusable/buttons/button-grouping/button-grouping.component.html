@@ -1,0 +1,15 @@
+<ng-container *ngIf="buttonList.length > 0">
+
+  <div class="row mb-3">
+    <div class="col-12 d-flex flex-wrap">
+      <div *ngFor="let b1 of buttonList; index as i" class="col-auto">
+        <button class="btn {{b1.class}}"
+                [disabled]="b1.isDisabled"
+                (click)="emitBtn1Action(b1)">
+          <mat-icon aria-hidden="false" [attr.aria-label]= "b1.label + ' icon'"
+                    class="me-2" fontIcon="{{b1.matIcon}}"></mat-icon> {{b1.label}}
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

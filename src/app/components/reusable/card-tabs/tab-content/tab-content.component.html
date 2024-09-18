@@ -1,0 +1,17 @@
+<div class="tab-pane fade {{tcClass}}" id="{{cardID}}" role="tabpanel" [attr.aria-labelledby]="cardID + '-tab'">
+  <div class="row">
+    <div class="col">
+      <h3 *ngIf="cardTitle && cardTitle.trim() != '' && icon && icon.trim() != ''" class="my-2 d-flex align-items-center">
+              <span class="{{iconColor}} me-2">
+                <mat-icon fontIcon="{{icon}}"></mat-icon>
+              </span>{{cardTitle}}
+      </h3>
+      <p class="mb-4" *ngIf="cardDesc && cardDesc.trim() != ''">{{cardDesc}}</p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,6 +35,20 @@ export class WebComponent implements OnInit{
         link2Text: "View Angular Prototype"
       },
       {
+        imgSrc: "assets/img/web/diss_mod_1.png",
+        imgAlt: "Screenshot of DISS Training - Module 1 course",
+        heading: "Welcome to DISS Training - Module 1",
+        desc: "This module provides an in-depth introduction to the Defense Information System for Security (DISS), a " +
+          "critical platform for managing personnel security, suitability, and credentialing management for the " +
+          "Department of Defense. Users are guided through an intuitive, step-by-step learning process, with the " +
+          "ability to navigate through the content using the Next button for a seamless learning experience. The " +
+          "module incorporates user-friendly design and interactivity to facilitate a smooth introduction to the DISS system.",
+        desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript, jQuery",
+        link: "https://pryzemedia.com/clients/alion/diss_courses/DISS%20Module%201/",
+        linkText: "View Demo",
+        link2:""
+      },
+      {
         imgSrc: "assets/img/web/mcafee.jpg",
         imgAlt: "Screenshot of the McAfee website",
         heading: "McAfee Website Localization Project",
@@ -45,7 +59,8 @@ export class WebComponent implements OnInit{
           "across diverse language versions. The comprehensive updates transpired during the 2nd - 3rd quarter of 2020.",
         desc2: "Utilized Technologies: Adobe Experience Manager, Bootstrap Framework, HTML5/CSS, JavaScript, and jQuery",
         link: "http://mcafee.com",
-        linkText: "View Website"
+        linkText: "View Website",
+        link2:""
       },
       {
         imgSrc: "assets/img/web/signazon.jpg",
@@ -56,9 +71,10 @@ export class WebComponent implements OnInit{
           "of a new HTML5 and JavaScript-based Designer tool to replace the existing Flash version. The new Designer " +
           "utilized SVG graphics within an HTML canvas, allowing users to import, edit, and save designs from the " +
           "original Flash application. These comprehensive updates transpired during the 2nd quarter of 2014.",
-        desc2: "Utilized Technologies: C#, HTML5, CSS, JavaScript, Bootstrap Adobe Flash, and XML data",
+        desc2: "Utilized Technologies: C#, HTML5, CSS, JavaScript, Bootstrap, Adobe Flash, and XML data",
         link: "https://www.signazon.com/",
-        linkText: "View Website"
+        linkText: "View Website",
+        link2:""
       },
       {
         imgSrc: "assets/img/web/semperis-dashboaard.jpg",
@@ -72,7 +88,20 @@ export class WebComponent implements OnInit{
           "to monitor training effectiveness and make data-driven decisions to optimize sales strategies.",
         desc2: "Utilized Technologies: PHP 8, MySql, HTML5/CSS, Bootstrap 5.2.3, JavaScript, Angular JS, jQuery",
         link: "https://nodejs-test.projectcog.com/analytics#/program/analytics",
-        linkText: "View Demo"
+        linkText: "View Demo",
+        link2:""
+      },
+      {
+        imgSrc: "assets/img/web/mcafee_drag_drop.png",
+        imgAlt: "Screenshot of the McAfee Drag and Drop Demo",
+        heading: "McAfee Drag and Drop Activity Demo",
+        desc: "This demo showcases the capability to design and integrate interactive Drag and Drop activities into " +
+          "McAfee's eLearning courses. The template was specifically built to enhance the learning experience and " +
+          "streamline the creation of engaging, hands-on activities for course developers.",
+        desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript, jQuery",
+        link: "https://www.demo.projectcog.com/ProjectCog/courses/DRAG-DROP-source/drag-drop-sample/",
+        linkText: "View Demo",
+        link2:""
       },
       {
         imgSrc: "assets/img/web/scenario.jpg",
@@ -83,7 +112,8 @@ export class WebComponent implements OnInit{
           "navigate objections, choosing from three response options and receiving customized feedback.",
         desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript, jQuery",
         link: "http://pryzemedia.com/clients/mcafee/gamification/scenario",
-        linkText: "View Demo"
+        linkText: "View Demo",
+        link2:""
       },
       {
         imgSrc: "assets/img/web/spinning-wheel.jpg",
@@ -93,7 +123,8 @@ export class WebComponent implements OnInit{
           "Warning, this demo has music. Be prepared to turn down the volume on your device.",
         desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript, jQuery",
         link: "http://pryzemedia.com/clients/mcafee/gamification/spinning-wheel/",
-        linkText: "View Demo"
+        linkText: "View Demo",
+        link2:""
       },
       {
         imgSrc: "assets/img/web/flashcard.jpg",
@@ -105,9 +136,10 @@ export class WebComponent implements OnInit{
           "memorization, the application features two modes: the standard flashcard mode and an engaging speed round mode.",
         desc2: "Utilized Technologies: HTML5/CSS, Bootstrap 3.5, JavaScript/jQuery",
         link: "http://pryzemedia.com/clients/mcafee/gamification/flashcard/",
-        linkText: "View Demo"
+        linkText: "View Demo",
+        link2:""
       },
-      {
+      /*{
         imgSrc: "assets/img/web/Miro.jpg",
         imgAlt: "Screenshot of the Miro Apartments Dallas Website",
         heading: "Miro Apartments Dallas Website Development",
@@ -119,7 +151,7 @@ export class WebComponent implements OnInit{
         desc2: "Utilized Technologies: PHP, MySql, XHTML/CSS, JavaScript",
         link: "",
         linkText: ""
-      },
+      },*/
       {
         imgSrc: "assets/img/web/universityFurnishings.jpg",
         imgAlt: "Screenshot of the University Furnishings Website",
@@ -133,7 +165,8 @@ export class WebComponent implements OnInit{
           "dynamically driven by a database. Project Initiation: 07-02-2010.",
         desc2: "Utilized Technologies: PHP, MySql, XHTML/CSS, JavaScript",
         link: "https://pryzemedia.com/universityfurnishings/index.php",
-        linkText: "View Demo"
+        linkText: "View Demo",
+        link2:""
       }
     ]
   }

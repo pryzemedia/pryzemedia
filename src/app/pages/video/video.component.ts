@@ -15,6 +15,7 @@ export class VideoComponent implements OnInit{
 
   videoPortfolio: showcaseItem[] = [];
 
+  cyberDark: SafeResourceUrl;
   gseSrc: SafeResourceUrl;
   dalSrc: SafeResourceUrl;
   cybThreatsSrc: SafeResourceUrl;
@@ -24,6 +25,9 @@ export class VideoComponent implements OnInit{
   rockdaleSrc: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
+    this.cyberDark = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/73yESaOso-Q?si=DssY_n3Ahk5PZREE'
+    );
     this.gseSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
       'https://www.youtube.com/embed/tqhHxWlJxlg?si=66Q0hPGbBUM147YP'
     );
@@ -49,6 +53,18 @@ export class VideoComponent implements OnInit{
 
   InitVideoData(): void {
     this.videoPortfolio = [
+      {
+        imgSrc: "assets/img/video/cyber_darkside.png",
+        imgAlt: "Screenshot of the Cybereason's Darkside video",
+        heading: "Cybereason - The Defender Files - Darkside",
+        desc: "Produced an engaging video highlighting Cybereason's Defender Files and the notorious Darkside Gang. " +
+          "The video delves into the group's tactics and strategies, detailing the threat they pose and how " +
+          "Cybereason's cutting-edge solutions effectively combat these risks.",
+        desc2: "Software Utilized: Adobe After Effects and Adobe Illustrator",
+        isVideo: true,
+        youtube: this.cyberDark,
+        linkText: "Open Video"
+      },
       {
         imgSrc: "assets/img/video/GSE.png",
         imgAlt: "Screenshot of the GSE Promotional video",

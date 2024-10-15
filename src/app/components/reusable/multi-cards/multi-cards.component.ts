@@ -32,7 +32,22 @@ export class MultiCardsComponent implements OnInit{
   @ViewChild('vModalComponent')
   vModalComponent? : ModalComponent;
 
+  hasVideo:boolean = this.videoModal;
   modalTitle:string = "Video Player";
+
+  modalDesc1:string = "Modal Description.";
+  modalDesc2:string = "";
+  modalDesc3:string = "";
+
+  modalImgSrc:string = "";
+  modalImgAlt:string = "";
+  mLink1:string = "";
+  mLink1Text:string = "";
+  mLink2:string = "";
+  mLink2Text:string = "";
+
+  //Modal Body Bg color
+  mBodyBG:string = "";
 
   /*@ViewChild('htmliFrameElement')
   iFrame? : any;*/
@@ -80,6 +95,7 @@ export class MultiCardsComponent implements OnInit{
     this.isOpen = false;
   }*/
   ngOnChanges(change: SimpleChange){
+    //console.log("Change detected,");
     if(this.vModalComponent){
       //this.vModalComponent.updateSrc()
       console.log("Change detected, vSrc = " + this.vSrc);
@@ -92,7 +108,7 @@ export class MultiCardsComponent implements OnInit{
   }
 
   stopVideo(){
-    if(this.videoModal) this.vSrc = this.blankSrc;
+    if(this.hasVideo) this.vSrc = this.blankSrc;
   }
 
   public updateVideoSrc(_cItem:any ){
@@ -103,8 +119,41 @@ export class MultiCardsComponent implements OnInit{
     }
   */
     //this.vSrc =_cItem;
-    if(_cItem.youtube) this.vSrc = _cItem.youtube;
+
+    //this.videoModal = _cItem.youtube ? true : false;
+    //console.log("this.videoModal = " + this.videoModal);
+    //console.log("_cItem.link2 = " + _cItem.link2);
+
+    this.hasVideo = _cItem.isVideo ? true : false;
+
+    if(this.hasVideo){
+      if(_cItem.youtube) this.vSrc = _cItem.youtube;
+      this.mBodyBG = " bg-dark";
+    }else{
+      this.mBodyBG = "";
+      this.modalImgSrc = _cItem.imgSrc;
+      this.modalImgAlt = _cItem.imgAlt;
+      if(_cItem.link) {
+        this.mLink1 = _cItem.link;
+        this.mLink1Text = _cItem.linkText;
+      }
+      if(_cItem.link2) {
+        this.mLink2 = _cItem.link2;
+        this.mLink2Text = _cItem.link2Text;
+      }else{
+        this.mLink2 = "";
+      }
+    }
+
     this.modalTitle = _cItem.heading;
+    this.modalDesc1 = _cItem.desc;
+    this.modalDesc2 = _cItem.desc2;
+    if(_cItem.desc3){
+      this.modalDesc3 = _cItem.desc3;
+    } else{
+      this.modalDesc3 = "";
+    }
+
   }
 
 }

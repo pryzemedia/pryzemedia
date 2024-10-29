@@ -63,6 +63,21 @@ export class WebComponent implements OnInit{
         link2:""
       },
       {
+        imgSrc: "assets/img/web/farmerGreene.png",
+        imgAlt: "Screenshot of the Adventures of Farmer Greene game demo",
+        heading: "Adventures of Farmer Greene Game Demo",
+        desc: "This HTML5 game, created for McAfee’s Sales Kick-Off event, puts a unique twist on the popular Angry " +
+          "Birds genre. Instead of birds, a cow piloting a spaceship defends a farm from alien invaders. " +
+          "Custom-designed graphics bring Farmer Greene’s world to life, while gameplay mechanics crafted in " +
+          "JavaScript, jQuery, and Construct 2 make for an engaging experience. Built to entertain and energize " +
+          "the McAfee team, this interactive project showcases my creativity and technical skills in game design " +
+          "and animation for corporate events.",
+        desc2: "Utilized Technologies: Illustrator, HTML5/CSS, JavaScript, jQuery, and Construct 2 by www.scirra.com",
+        link: "https://dev.projectcog.com/Clients/intel/angrycowslvl/lvl_1/index.html",
+        linkText: "View Website",
+        link2:""
+      },
+      {
         imgSrc: "assets/img/web/signazon.jpg",
         imgAlt: "Screenshot of the Signazon website",
         heading: "Signazon.com Redesign & HTML5 Tool Development",

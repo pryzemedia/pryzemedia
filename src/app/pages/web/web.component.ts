@@ -63,6 +63,23 @@ export class WebComponent implements OnInit{
         link2:""
       },
       {
+        imgSrc: "assets/img/web/vsko2018.jpg",
+        imgAlt: "Screenshot of the McAfee VSKO 2018 On-Demand Training Web Application",
+        heading: "VSKO 2018 - On-Demand Training Web Application",
+        desc: "This SCORM-compliant web app, designed for McAfee’s 2018 Virtual Sales Kickoff, was built to provide an " +
+          "interactive and engaging training experience for the sales team. Each user progressed through a map-based " +
+          "activity board, unlocking new course stops upon completing prior modules. Gamifying the experience, a live " +
+          "leaderboard displayed team members' standings, encouraging competition and boosting motivation. With " +
+          "front-end elements crafted using Bootstrap, custom jQuery, and JavaScript for animation and interactivity, " +
+          "the application also integrated PHP and MySQL to securely store user progress and leaderboard data. " +
+          "This tool highlighted Jeffrey’s ability to blend technical functionality with dynamic, user-centered " +
+          "design for corporate training.",
+        desc2: "Utilized Technologies: Illustrator, Bootstrap Framework, HTML5/CSS, JavaScript, and jQuery",
+        link: "http://www.projectcog.com/user_files/McAfee/resources/course/VSKO_2/index.html",
+        linkText: "View Demo",
+        link2:""
+      },
+      {
         imgSrc: "assets/img/web/farmerGreene.png",
         imgAlt: "Screenshot of the Adventures of Farmer Greene game demo",
         heading: "Adventures of Farmer Greene Game Demo",
@@ -74,7 +91,7 @@ export class WebComponent implements OnInit{
           "and animation for corporate events.",
         desc2: "Utilized Technologies: Illustrator, HTML5/CSS, JavaScript, jQuery, and Construct 2 by www.scirra.com",
         link: "https://dev.projectcog.com/Clients/intel/angrycowslvl/lvl_1/index.html",
-        linkText: "View Website",
+        linkText: "View Demo",
         link2:""
       },
       {

@@ -63,7 +63,7 @@ export class WebComponent implements OnInit{
         link2:""
       },
       {
-        imgSrc: "assets/img/web/vsko2018.jpg",
+        imgSrc: "assets/img/web/vsko2018.png",
         imgAlt: "Screenshot of the McAfee VSKO 2018 On-Demand Training Web Application",
         heading: "VSKO 2018 - On-Demand Training Web Application",
         desc: "This SCORM-compliant web app, designed for McAfee’s 2018 Virtual Sales Kickoff, was built to provide an " +

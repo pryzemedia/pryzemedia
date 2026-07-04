@@ -1,19 +1,59 @@
-<div class="modal fade" id="{{mId}}" tabindex="-1" aria-labelledby="evideoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <!--<div class="modal-header">
-        <h5 class="modal-title" id="videoModalLabel">Video Player</h5>
-        <button type="button" class="btn-close" (click)="modalService.close();" aria-label="Close"></button>
+<div *ngIf="isOpen">
+  <div class="modal-backdrop show" (click)="close()"></div>
+  <div class="modal d-block" tabindex="-1" role="dialog" aria-modal="true" (click)="close()">
+    <div class="modal-dialog modal-lg" role="document" (click)="$event.stopPropagation()">
+      <div class="modal-content">
+        <div class="modal-header bg-blue-deep text-white">
+          <h5 class="modal-title" id="videoModalLabel">{{ item?.heading || 'Details' }}</h5>
+          <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="close()"></button>
+        </div>
+        <div class="modal-body d-flex justify-content-center" [ngClass]="item?.isVideo ? 'bg-dark' : ''">
+          <ng-container *ngIf="item; else emptyState">
+            <div *ngIf="item.isVideo; else webBody">
+              <iframe width="560" height="315"
+                      [src]="item.youtube"
+                      title="YouTube video player" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen>
+              </iframe>
+            </div>
+            <ng-template #webBody>
+              <div class="card">
+                <img [src]="item.imgSrc" class="card-img-top shadow bg-body" [alt]="item.imgAlt">
+                <div class="card-body">
+                  <h5 class="card-title">Description</h5>
+                  <p class="card-text">{{ item.desc }}</p>
+                  <p class="card-text" *ngIf="item.desc2">{{ item.desc2 }}</p>
+                  <p class="card-text" *ngIf="item.desc3">{{ item.desc3 }}</p>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+          <ng-template #emptyState>
+            <p>No item selected.</p>
+          </ng-template>
+        </div>
+        <div class="modal-footer text-white d-flex justify-content-start bg-blue-deep">
+          <div *ngIf="item?.isVideo; else webFooter">
+            <p><strong>Description:</strong></p>
+            <p>{{ item?.desc }}</p>
+            <p>{{ item?.desc2 }}</p>
+            <p *ngIf="item?.desc3">{{ item?.desc3 }}</p>
+          </div>
+          <ng-template #webFooter>
+            <div *ngIf="item?.link">
+              <a class="btn btn-outline-light my-1 me-1" [href]="item?.link" target="_blank" rel="noopener noreferrer">
+                {{ item?.linkText }}
+              </a>
+            </div>
+            <div *ngIf="item?.link2">
+              <a class="btn btn-outline-light" [href]="item?.link2" target="_blank" rel="noopener noreferrer">
+                {{ item?.link2Text }}
+              </a>
+            </div>
+          </ng-template>
+        </div>
       </div>
-      <div class="modal-body">
-        <iframe width="560" height="315"
-                src="{{videoSrc}}"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
-                picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>-->
-      <ng-content></ng-content>
     </div>
-
   </div>
 </div>

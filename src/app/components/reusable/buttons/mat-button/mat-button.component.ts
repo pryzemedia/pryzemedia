@@ -5,7 +5,8 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 @Component({
   selector: 'app-mat-button',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet],
+  //imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet],
+  imports: [CommonModule],
   templateUrl: './mat-button.component.html',
   styleUrls: ['./mat-button.component.css']
 })

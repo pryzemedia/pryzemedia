@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { WebComponent } from './pages/web/web.component';
 import { VideoComponent } from './pages/video/video.component';
+import { DesignComponent } from "./pages/design/design.component";
 
 @Component({
   selector: 'app-root',
@@ -15,8 +16,9 @@ import { VideoComponent } from './pages/video/video.component';
     FooterComponent,
     HomeComponent,
     WebComponent,
-    VideoComponent
-  ],
+    VideoComponent,
+    DesignComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

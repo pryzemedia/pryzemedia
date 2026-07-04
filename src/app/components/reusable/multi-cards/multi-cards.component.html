@@ -2,119 +2,25 @@
     <div *ngFor="let cItem of cardList; index as j" class="col-md-6 col-lg-4 my-2 d-flex align-items-stretch">
       <div class="card {{headerColorClass}} {{headerTextColor}}">
         <div class="card-header">
-          {{cItem.heading}}
+          {{ cItem.heading }}
         </div>
         <div class="card-body bg-white">
-          <button class="btn btn-outline-light" (click)="modalService.open('modal-1', cItem)">
-            <img [src]="cItem.imgSrc" class="card-img-top mb-2" alt="{{cItem.imgAlt}}">
+          <button class="btn btn-outline-light maxHeight" (click)="openItem(cItem)">
+            <img [src]="cItem.imgSrc" class="card-img-top mb-2" alt="{{ cItem.imgAlt }}">
           </button>
-          <!--<div class="bd-example bg-secondary-subtle">-->
-            <!--<div class="accordion accordion-flush" [id]="'accordion_' + j">
-              <div class="accordion-item">
-                <h2 class="accordion-header" [id]="'flush-heading_' + j">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          [attr.data-bs-target]="'#' + uID + 'flush-collapse_' + j" aria-expanded="false"
-                          [attr.aria-controls]="uID + 'flush-collapse_' + j">
-                    View Description
-                  </button>
-                </h2>
-                <div [id]="uID + 'flush-collapse_' + j" class="accordion-collapse collapse"
-                     [attr.aria-labelledby]="'flush-heading_' + j"
-                     [attr.data-bs-parent]="'#accordion_' + j">
-                  <div class="accordion-body">
-                    <p class="card-text mt-2">
-                      {{cItem.desc}}
-                    </p>
-                    <p class="card-text" *ngIf="cItem.desc2">
-                      {{cItem.desc2}}
-                    </p>
-                    <p class="card-text" *ngIf="cItem.desc3">
-                      {{cItem.desc3}}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          <!--</div>-->
-
-
         </div>
         <div class="card-footer">
-          <button class="btn btn-outline-light me-2" (click)="modalService.open('modal-1', cItem)">
+          <button class="btn btn-outline-light me-2" (click)="openItem(cItem)">
             More Info
           </button>
-          <!--<div *ngIf="!videoModal; else vModalOption">
-            <a *ngIf="cItem.link" class="btn {{btnColorClass}} my-1 me-1" href="{{cItem.link}}" target="_blank">
-              {{cItem.linkText}}
-            </a>
-            <a *ngIf="cItem.link2" class="btn {{btnColorClass}}" href="{{cItem.link2}}" target="_blank">
-              {{cItem.link2Text}}
-            </a>
-          </div>
-          <ng-template #vModalOption>
-
-            <button *ngIf="cItem.youtube" class="btn btn-outline-light me-2" (click)="modalService.open('modal-1', cItem)">
-              {{cItem.linkText}}
-            </button>
-          </ng-template>-->
         </div>
       </div>
-
     </div>
   </div>
 
- <!--<ng-container *ngIf="videoModal">-->
-   <modal #vModalComponent mId="modal-1"
-          (vLinkUpdate)="updateVideoSrc($event)"
-          (modalClosed)="stopVideo()">
-     <div class="modal-header bg-blue-deep">
-       <h5 class="modal-title" id="videoModalLabel">{{modalTitle}}</h5>
-      <button type="button" class="btn-close btn-close-white" (click)="modalService.close();" aria-label="Close"></button>
-     </div>
-     <div class="modal-body d-flex justify-content-center + {{mBodyBG}}">
-       <div *ngIf="hasVideo; else webBody">
-         <iframe #htmliFrameElement width="560" height="315"
-                 [attr.src]="vSrc"
-                 title="YouTube video player" frameborder="0"
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
-                picture-in-picture; web-share" allowfullscreen></iframe><!---->
-       </div>
-       <ng-template #webBody>
-         <div class="card">
-           <img [attr.src]="modalImgSrc" class="card-img-top shadow bg-body" [attr.alt]="modalImgAlt">
-           <div class="card-body">
-             <h5 class="card-title">Description</h5>
-             <p class="card-text">{{modalDesc1}}</p>
-             <p class="card-text">{{modalDesc2}}</p>
-             <p class="card-text" *ngIf="modalDesc3.length>1">
-               {{modalDesc3}}
-             </p>
-           </div>
-         </div>
-       </ng-template>
-
-     </div>
-     <div class="modal-footer text-white d-flex justify-content-start  bg-blue-deep">
-       <div *ngIf="hasVideo; else webFooter">
-         <p><strong>Description:</strong></p>
-         <p>{{modalDesc1}}</p>
-         <p>{{modalDesc2}}</p>
-         <p *ngIf="modalDesc3.length>1">
-           {{modalDesc3}}
-         </p>
-       </div>
-       <ng-template #webFooter>
-         <a *ngIf="mLink1" class="btn {{btnColorClass}} my-1 me-1" href="{{mLink1}}" target="_blank">
-           {{mLink1Text}}
-         </a>
-         <a *ngIf="mLink2.length > 0" class="btn {{btnColorClass}}" href="{{mLink2}}" target="_blank">
-           {{mLink2Text}}
-         </a>
-       </ng-template>
-
-     </div>
-
-
-   </modal>
-  <!--</ng-container>-->
+  <modal
+    [isOpen]="isModalOpen"
+    [item]="selectedItem"
+    (closed)="closeModal()">
+  </modal>
 

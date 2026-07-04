@@ -124,6 +124,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .card img {
   max-width: 100%;
   max-height: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .card {
   margin: 0 0.5em;
@@ -143,7 +145,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   top: 50%;
   transform: translateY(-50%);*/
 }
-
+.maxHeight{
+  max-height: 300px;
+  overflow: hidden;
+}
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -moz-transition: -moz-transform 0.3s ease-out;

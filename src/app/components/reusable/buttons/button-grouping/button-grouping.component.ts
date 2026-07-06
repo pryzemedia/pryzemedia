@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatIconModule} from "@angular/material/icon";
-import {Button} from 'component-lib';
+import {Button} from "../../data/general-interface";
 
 
 @Component({

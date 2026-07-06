@@ -19,9 +19,23 @@ export class ContactComponent {
 
   isSubmitting = false;
   submitStatus: string | null = null;
-  private readonly apiUrl = 'http://localhost/pryzemedia/contact.php';
+  private readonly apiUrl = this.getApiUrl();
 
   constructor(private http: HttpClient) {}
+
+  /**
+   * Determine API endpoint based on environment
+   * Local dev: http://localhost/pryzemedia/contact.php
+   * Production: ./contact.php (relative path in same directory)
+   */
+  private getApiUrl(): string {
+    if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+      // Local development
+      return 'http://localhost/pryzemedia/contact.php';
+    }
+    // Production - contact.php is in the same directory as index.html (/main/)
+    return './contact.php';
+  }
 
   onSubmit(): void {
     if (!this.user.name.trim() || !this.user.email.trim() || !this.user.message.trim()) {

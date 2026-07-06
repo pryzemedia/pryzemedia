@@ -29,15 +29,31 @@ if (!is_array($data)) {
     exit;
 }
 
-$name = trim($data['name'] ?? '');
-$email = trim($data['email'] ?? '');
-$message = trim($data['message'] ?? '');
+$name = sanitizeInput($data['name'] ?? '');
+$email = sanitizeInput($data['email'] ?? '');
+$message = sanitizeInput($data['message'] ?? '');
 
 if ($name === '' || $email === '' || $message === '') {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Please complete all required fields.']);
     exit;
 }
+
+if (mb_strlen($name) < 2) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Name must be at least 2 characters.']);
+    exit;
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/@.+\./', $email)) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Please provide a valid email address.']);
+    exit;
+}
+
+// Avoid header-injection vectors in mail headers.
+$name = str_replace(["\r", "\n"], '', $name);
+$email = str_replace(["\r", "\n"], '', $email);
 
 $siteName = 'PryzeMedia.com';
 $to = 'jeffreykprice@pryzemedia.com';
@@ -148,5 +164,14 @@ function sendViaGmailSMTP($to, $subject, $body, $headers, $name, $email) {
         @fclose($socket);
         return false;
     }
+}
+
+function sanitizeInput($value) {
+    $clean = trim((string)($value ?? ''));
+    $clean = preg_replace('/<[^>]*>/', '', $clean);
+    $clean = preg_replace('/javascript\s*:/i', '', $clean);
+    $clean = preg_replace('/on\w+\s*=\s*/i', '', $clean);
+    $clean = str_replace(['<', '>'], '', $clean);
+    return $clean;
 }
 ?>

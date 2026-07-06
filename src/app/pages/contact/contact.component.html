@@ -16,20 +16,32 @@
                   <!-- Name input -->
                   <div class="mb-3">
                     <label class="form-label" for="name">Name:</label>
-                    <input class="form-control" type="text" id="name" [(ngModel)]="user.name" name="name" required>
+                    <input class="form-control" type="text" id="name" [(ngModel)]="user.name" name="name"
+                      (blur)="sanitizeAndValidateField('name')" [class.is-invalid]="fieldErrors.name" required>
+                    <div *ngIf="fieldErrors.name" class="invalid-feedback d-block">
+                      {{ fieldErrors.name }}
+                    </div>
                   </div>
 
                   <!-- Email address input -->
                   <div class="mb-3">
                     <label class="form-label" for="email">Email:</label>
-                    <input class="form-control" type="email" id="email" [(ngModel)]="user.email" name="email" required>
+                    <input class="form-control" type="email" id="email" [(ngModel)]="user.email" name="email"
+                      (blur)="sanitizeAndValidateField('email')" [class.is-invalid]="fieldErrors.email" required>
+                    <div *ngIf="fieldErrors.email" class="invalid-feedback d-block">
+                      {{ fieldErrors.email }}
+                    </div>
                   </div>
 
                   <!-- Message input -->
                   <div class="mb-3">
                     <label class="form-label" for="message">Message:</label>
                     <textarea class="form-control" id="message" [(ngModel)]="user.message" name="message" rows="4"
+                      (blur)="sanitizeAndValidateField('message')" [class.is-invalid]="fieldErrors.message"
                       required></textarea>
+                    <div *ngIf="fieldErrors.message" class="invalid-feedback d-block">
+                      {{ fieldErrors.message }}
+                    </div>
                   </div>
 
                   <div *ngIf="submitStatus" class="alert mt-3"

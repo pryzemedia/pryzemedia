@@ -12,10 +12,18 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  private readonly emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   user = {
     name: '',
     email: '',
     message: ''
+  };
+
+  fieldErrors: { name: string | null; email: string | null; message: string | null } = {
+    name: null,
+    email: null,
+    message: null
   };
 
   isSubmitting = false;
@@ -39,8 +47,17 @@ export class ContactComponent {
   }
 
   onSubmit(): void {
-    if (!this.user.name.trim() || !this.user.email.trim() || !this.user.message.trim()) {
-      this.submitStatus = 'Please complete all required fields.';
+    const sanitized = {
+      name: this.sanitizeInput(this.user.name),
+      email: this.sanitizeInput(this.user.email),
+      message: this.sanitizeInput(this.user.message)
+    };
+
+    this.user = { ...sanitized };
+    this.validateAllFields();
+
+    if (this.hasFieldErrors()) {
+      this.submitStatus = 'Please fix the highlighted fields and try again.';
       return;
     }
 
@@ -48,9 +65,9 @@ export class ContactComponent {
     this.submitStatus = null;
 
     const payload = {
-      name: this.user.name.trim(),
-      email: this.user.email.trim(),
-      message: this.user.message.trim()
+      name: sanitized.name,
+      email: sanitized.email,
+      message: sanitized.message
     };
 
     this.http.post<{ success: boolean; message: string }>(this.apiUrl, payload, {
@@ -77,5 +94,58 @@ export class ContactComponent {
       email: '',
       message: ''
     };
+
+    this.fieldErrors = {
+      name: null,
+      email: null,
+      message: null
+    };
+  }
+
+  sanitizeAndValidateField(field: 'name' | 'email' | 'message'): void {
+    this.user[field] = this.sanitizeInput(this.user[field]);
+    this.validateField(field);
+  }
+
+  private validateAllFields(): void {
+    this.validateField('name');
+    this.validateField('email');
+    this.validateField('message');
+  }
+
+  private hasFieldErrors(): boolean {
+    return Boolean(this.fieldErrors.name || this.fieldErrors.email || this.fieldErrors.message);
+  }
+
+  private validateField(field: 'name' | 'email' | 'message'): void {
+    const value = this.user[field].trim();
+
+    if (field === 'name') {
+      this.fieldErrors.name = value.length < 2 ? 'Name must be at least 2 characters.' : null;
+      return;
+    }
+
+    if (field === 'email') {
+      if (!value) {
+        this.fieldErrors.email = 'Email is required.';
+        return;
+      }
+
+      this.fieldErrors.email = this.emailPattern.test(value)
+        ? null
+        : 'Email must include "@" and at least one "." after it.';
+      return;
+    }
+
+    this.fieldErrors.message = value ? null : 'Message is required.';
+  }
+
+  private sanitizeInput(value: string): string {
+    return value
+      .replace(/<[^>]*>/g, '')
+      .replace(/javascript\s*:/gi, '')
+      .replace(/on\w+\s*=\s*/gi, '')
+      .replace(/[<>]/g, '')
+      .trim();
   }
 }

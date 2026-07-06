@@ -9,6 +9,7 @@ import { DesignComponent } from "./pages/design/design.component";
 
 @Component({
     selector: 'app-root',
+    standalone: true,
     imports: [
         CommonModule,
         HeaderComponent,

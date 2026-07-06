@@ -1,41 +1,62 @@
-import {Component, OnInit} from '@angular/core';
-import {CommonModule} from "@angular/common";
-import { HttpClient } from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-//import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'app-contact',
-    imports: [CommonModule, FormsModule, ReactiveFormsModule],
-    templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.css']
+  selector: 'app-contact',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit{
+export class ContactComponent {
   user = {
     name: '',
     email: '',
     message: ''
   };
 
-  constructor(private http: HttpClient) { }
+  isSubmitting = false;
+  submitStatus: string | null = null;
+  private readonly apiUrl = 'http://localhost/pryzemedia/contact.php';
 
-  ngOnInit(): void {
-  }
+  constructor(private http: HttpClient) {}
 
-  onSubmit() {
-    this.http.post('http://pryzemedia.com/main/contact.php', this.user).subscribe(
-      (response) => {
-        console.log('Form successfully sent!', response);
+  onSubmit(): void {
+    if (!this.user.name.trim() || !this.user.email.trim() || !this.user.message.trim()) {
+      this.submitStatus = 'Please complete all required fields.';
+      return;
+    }
+
+    this.isSubmitting = true;
+    this.submitStatus = null;
+
+    const payload = {
+      name: this.user.name.trim(),
+      email: this.user.email.trim(),
+      message: this.user.message.trim()
+    };
+
+    this.http.post<{ success: boolean; message: string }>(this.apiUrl, payload, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    }).subscribe({
+      next: ({ success, message }) => {
+        this.isSubmitting = false;
+        this.submitStatus = message;
+
+        if (success) {
+          this.resetForm();
+        }
       },
-      (error) => {
-        console.log('Error sending form', error);
+      error: () => {
+        this.isSubmitting = false;
+        this.submitStatus = 'Sorry, your message could not be sent right now. Please try again later.';
       }
-    );
-    this.resetForm();
+    });
   }
 
-  resetForm() {
+  resetForm(): void {
     this.user = {
       name: '',
       email: '',

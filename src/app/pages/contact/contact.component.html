@@ -14,32 +14,31 @@
               <!-- Name input -->
               <div class="mb-3">
                 <label class="form-label" for="name">Name:</label>
-                <input class="form-control" type="text" id="name" [(ngModel)]="user.name" formControlName="name" name="name" required>
-
+                <input class="form-control" type="text" id="name" [(ngModel)]="user.name" name="name" required>
               </div>
 
               <!-- Email address input -->
               <div class="mb-3">
                 <label class="form-label" for="email">Email:</label>
-                <input class="form-control" type="email" id="email" [(ngModel)]="user.email" formControlName="email" name="email" required>
+                <input class="form-control" type="email" id="email" [(ngModel)]="user.email" name="email" required>
               </div>
 
               <!-- Message input -->
               <div class="mb-3">
                 <label class="form-label" for="message">Message:</label>
                 <textarea class="form-control" id="message" [(ngModel)]="user.message"
-                          formControlName="message" name="message" rows="4" required></textarea>
+                          name="message" rows="4" required></textarea>
               </div>
 
-              <!-- Form submit button
-              <div class="d-grid">
-
-              </div>-->
-
+              <div *ngIf="submitStatus" class="alert mt-3" [ngClass]="submitStatus.includes('Sorry') ? 'alert-danger' : 'alert-success'">
+                {{ submitStatus }}
+              </div>
 
           </div>
             <div class="card-footer bg-blue-deep">
-              <button class="btn btn-outline-light" type="submit">Submit</button>
+              <button class="btn btn-outline-light" type="submit" [disabled]="isSubmitting">
+                {{ isSubmitting ? 'Sending...' : 'Submit' }}
+              </button>
             </div>
         </form>
         </div>

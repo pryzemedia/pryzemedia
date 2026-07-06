@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from "@angular/material/icon";
 
 @Component({
-  selector: 'collapse-panel',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
-  templateUrl: './collapse-panel.component.html',
-  styleUrls: ['./collapse-panel.component.css']
+    selector: 'collapse-panel',
+    imports: [CommonModule, MatIconModule],
+    templateUrl: './collapse-panel.component.html',
+    styleUrls: ['./collapse-panel.component.css']
 })
 export class CollapsePanelComponent implements OnInit, AfterViewInit{
 

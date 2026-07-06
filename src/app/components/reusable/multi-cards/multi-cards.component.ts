@@ -4,11 +4,10 @@ import { showcaseItem } from '../../data/general-interface';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
-  selector: 'app-multi-cards',
-  standalone: true,
-  imports: [CommonModule, ModalComponent],
-  templateUrl: './multi-cards.component.html',
-  styleUrls: ['./multi-cards.component.css']
+    selector: 'app-multi-cards',
+    imports: [CommonModule, ModalComponent],
+    templateUrl: './multi-cards.component.html',
+    styleUrls: ['./multi-cards.component.css']
 })
 export class MultiCardsComponent {
   @Input() cardList: showcaseItem[] = [];

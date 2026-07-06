@@ -11,7 +11,7 @@ import {QuestionResponse} from "../../../services/datacall/dataCallModel";
 
 
 @Component({
-  selector: 'app-dynamic-form', standalone: true, imports: [CommonModule, DynamicFormQuestionComponent, ReactiveFormsModule], providers: [QuestionControlService], templateUrl: './dynamic-form.component.html'
+    selector: 'app-dynamic-form', imports: [CommonModule, DynamicFormQuestionComponent, ReactiveFormsModule], providers: [QuestionControlService], templateUrl: './dynamic-form.component.html'
 })
 
 // Programmer notes. This form component can be used in a Gorm Group by simply placing an instance of this

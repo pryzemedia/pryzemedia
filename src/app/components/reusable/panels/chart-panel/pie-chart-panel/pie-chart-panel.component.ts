@@ -10,11 +10,10 @@ import {MatIconModule} from "@angular/material/icon";
 
 
 @Component({
-  selector: 'app-pie-chart',
-  standalone: true,
-  imports: [CommonModule, NgChartsModule, MatIconModule],
-  templateUrl: './pie-chart-panel.component.html',
-  styleUrls: ['./pie-chart-panel.component.css']
+    selector: 'app-pie-chart',
+    imports: [CommonModule, NgChartsModule, MatIconModule],
+    templateUrl: './pie-chart-panel.component.html',
+    styleUrls: ['./pie-chart-panel.component.css']
 })
 export class PieChartPanelComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;

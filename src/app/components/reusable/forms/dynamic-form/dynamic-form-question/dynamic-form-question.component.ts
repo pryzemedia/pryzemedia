@@ -5,10 +5,9 @@ import { CommonModule } from '@angular/common';
 import {QuestionBase} from "../question-base";
 
 @Component({
-  selector: 'app-question',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './dynamic-form-question.component.html'
+    selector: 'app-question',
+    imports: [CommonModule, ReactiveFormsModule],
+    templateUrl: './dynamic-form-question.component.html'
 })
 export class DynamicFormQuestionComponent implements OnInit{
 

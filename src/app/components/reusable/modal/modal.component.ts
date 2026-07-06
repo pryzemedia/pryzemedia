@@ -1,14 +1,13 @@
-import { Component, Inject, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, Inject, EventEmitter, Input, OnDestroy, Output, DOCUMENT } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { showcaseItem } from '../../data/general-interface';
 
 @Component({
-  selector: 'modal',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+    selector: 'modal',
+    imports: [CommonModule],
+    templateUrl: './modal.component.html',
+    styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnDestroy {
   private _isOpen = false;

@@ -5,11 +5,10 @@ import {Button} from 'component-lib';
 
 
 @Component({
-  selector: 'app-button-grouping',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
-  templateUrl: './button-grouping.component.html',
-  styleUrls: ['./button-grouping.component.css']
+    selector: 'app-button-grouping',
+    imports: [CommonModule, MatIconModule],
+    templateUrl: './button-grouping.component.html',
+    styleUrls: ['./button-grouping.component.css']
 })
 export class ButtonGroupingComponent implements OnInit {
 

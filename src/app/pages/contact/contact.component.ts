@@ -1,16 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 //import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+    selector: 'app-contact',
+    imports: [CommonModule, FormsModule, ReactiveFormsModule],
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit{
   user = {

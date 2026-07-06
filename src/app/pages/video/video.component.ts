@@ -6,11 +6,10 @@ import { VIDEO_PORTFOLIO } from '../../components/data/video-portfolio';
 import { VideoService } from '../../services/video.service';
 
 @Component({
-  selector: 'app-video',
-  standalone: true,
-  imports: [CommonModule, MultiCardsComponent],
-  templateUrl: './video.component.html',
-  styleUrls: ['./video.component.css']
+    selector: 'app-video',
+    imports: [CommonModule, MultiCardsComponent],
+    templateUrl: './video.component.html',
+    styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit{
 

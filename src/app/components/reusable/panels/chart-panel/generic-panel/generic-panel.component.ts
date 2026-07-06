@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { faChevronDown, faFileExcel, faFilePdf, faFileWord, faList } from '@fortawesome/free-solid-svg-icons';
 import {reportList} from "../../../../../../../assessment/src/app/components/collapse-panels/data/panel-options-interface";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import {MatIconModule} from "@angular/material/icon";
 
 @Component({
-  selector: 'app-generic-panel',
-  standalone: true,
-  imports: [CommonModule, FontAwesomeModule, HttpClientModule, MatIconModule],
-  templateUrl: './generic-panel.component.html',
-  styleUrls: ['./generic-panel.component.css']
+    selector: 'app-generic-panel',
+    imports: [CommonModule, FontAwesomeModule,
+        // TODO: `HttpClientModule` should not be imported into a component directly.
+        // Please refactor the code to add `provideHttpClient()` call to the provider list in the
+        // application bootstrap logic and remove the `HttpClientModule` import from this component.
+        HttpClientModule, MatIconModule],
+    templateUrl: './generic-panel.component.html',
+    styleUrls: ['./generic-panel.component.css']
 })
 export class GenericPanelComponent implements OnInit{
 

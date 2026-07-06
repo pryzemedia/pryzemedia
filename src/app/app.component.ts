@@ -8,19 +8,18 @@ import { VideoComponent } from './pages/video/video.component';
 import { DesignComponent } from "./pages/design/design.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    WebComponent,
-    VideoComponent,
-    DesignComponent
-],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    imports: [
+        CommonModule,
+        HeaderComponent,
+        FooterComponent,
+        HomeComponent,
+        WebComponent,
+        VideoComponent,
+        DesignComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'PryzeMedia';

@@ -4,11 +4,10 @@ import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 
 
 @Component({
-  selector: 'modal-confirm',
-  standalone: true,
+    selector: 'modal-confirm',
     imports: [CommonModule],
-  templateUrl: './modal-confirm.component.html',
-  styleUrls: ['./modal-confirm.component.css']
+    templateUrl: './modal-confirm.component.html',
+    styleUrls: ['./modal-confirm.component.css']
 })
 export class ModalConfirmComponent {
 

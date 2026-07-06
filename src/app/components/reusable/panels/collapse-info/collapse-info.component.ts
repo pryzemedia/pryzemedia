@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-collapse-info',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './collapse-info.component.html',
-  styleUrls: ['./collapse-info.component.css']
+    selector: 'app-collapse-info',
+    imports: [CommonModule],
+    templateUrl: './collapse-info.component.html',
+    styleUrls: ['./collapse-info.component.css']
 })
 export class CollapseInfoComponent {
 

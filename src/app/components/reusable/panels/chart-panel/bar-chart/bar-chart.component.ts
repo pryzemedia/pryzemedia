@@ -8,11 +8,10 @@ import {MatIconModule} from "@angular/material/icon";
 
 
 @Component({
-  selector: 'app-bar-chart',
-  standalone: true,
-  imports: [CommonModule, NgChartsModule, MatIconModule],
-  templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.css']
+    selector: 'app-bar-chart',
+    imports: [CommonModule, NgChartsModule, MatIconModule],
+    templateUrl: './bar-chart.component.html',
+    styleUrls: ['./bar-chart.component.css']
 })
 export class BarChartComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;

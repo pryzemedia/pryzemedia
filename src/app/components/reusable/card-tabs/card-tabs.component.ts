@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from "@angular/material/icon";
 
 @Component({
-  selector: 'card-tabs',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
-  templateUrl: './card-tabs.component.html',
-  styleUrls: ['./card-tabs.component.css']
+    selector: 'card-tabs',
+    imports: [CommonModule, MatIconModule],
+    templateUrl: './card-tabs.component.html',
+    styleUrls: ['./card-tabs.component.css']
 })
 export class CardTabsComponent {
 

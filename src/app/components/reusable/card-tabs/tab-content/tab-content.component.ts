@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from "@angular/material/icon";
 
 @Component({
-  selector: 'tab-content',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
-  templateUrl: './tab-content.component.html',
-  styleUrls: ['./tab-content.component.css']
+    selector: 'tab-content',
+    imports: [CommonModule, MatIconModule],
+    templateUrl: './tab-content.component.html',
+    styleUrls: ['./tab-content.component.css']
 })
 export class TabContentComponent implements OnInit{
 

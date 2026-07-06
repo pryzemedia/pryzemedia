@@ -4,11 +4,10 @@ import {MenuComponent} from "./menu/menu.component";
 
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, MenuComponent],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'app-header',
+    imports: [CommonModule, MenuComponent],
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
 

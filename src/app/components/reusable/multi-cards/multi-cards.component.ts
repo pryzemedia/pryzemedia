@@ -5,6 +5,7 @@ import { ModalComponent } from '../modal/modal.component';
 
 @Component({
     selector: 'app-multi-cards',
+    standalone: true,
     imports: [CommonModule, ModalComponent],
     templateUrl: './multi-cards.component.html',
     styleUrls: ['./multi-cards.component.css']

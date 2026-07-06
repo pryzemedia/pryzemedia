@@ -5,6 +5,7 @@ import { showcaseItem } from '../../data/general-interface';
 
 @Component({
     selector: 'modal',
+    standalone: true,
     imports: [CommonModule],
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.css']

@@ -7,6 +7,7 @@ import { VideoService } from '../../services/video.service';
 
 @Component({
     selector: 'app-video',
+    standalone: true,
     imports: [CommonModule, MultiCardsComponent],
     templateUrl: './video.component.html',
     styleUrls: ['./video.component.css']

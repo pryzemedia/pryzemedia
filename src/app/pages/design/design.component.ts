@@ -6,6 +6,7 @@ import { DESIGN_PORTFOLIO } from '../../components/data/design-portfolio';
 
 @Component({
     selector: 'app-design',
+    standalone: true,
     imports: [CommonModule, MultiCardsComponent],
     templateUrl: './design.component.html',
     styleUrls: ['./design.component.css']

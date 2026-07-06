@@ -6,6 +6,7 @@ import { WEB_PORTFOLIO } from '../../components/data/web-portfolio';
 
 @Component({
     selector: 'app-web',
+    standalone: true,
     imports: [CommonModule, MultiCardsComponent],
     templateUrl: './web.component.html',
     styleUrls: ['./web.component.css']

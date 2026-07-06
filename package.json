@@ -9,6 +9,20 @@
     "test": "ng test"
   },
   "private": true,
+  "overrides": {
+    "@babel/core": "^7.29.7",
+    "brace-expansion": "^1.1.13",
+    "cookie": "^0.7.2",
+    "engine.io": "^6.6.4",
+    "flatted": "^3.4.2",
+    "follow-redirects": "^1.15.12",
+    "minimatch": "^3.1.4",
+    "picomatch": "^2.3.2",
+    "socket.io-adapter": "^2.5.5",
+    "socket.io-parser": "^4.2.6",
+    "tmp": "^0.2.6",
+    "ws": "^8.21.0"
+  },
   "dependencies": {
     "@angular/animations": "^20.3.25",
     "@angular/cdk": "^20.2.14",

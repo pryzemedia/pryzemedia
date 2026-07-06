@@ -9,38 +9,53 @@
             Contact PryzeMedia
           </div>
           <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-          <div class="card-body bg-white text-dark">
+            <div class="card-body bg-white text-dark">
+              <div class="row g-3 d-flex align-items-center">
 
-              <!-- Name input -->
-              <div class="mb-3">
-                <label class="form-label" for="name">Name:</label>
-                <input class="form-control" type="text" id="name" [(ngModel)]="user.name" name="name" required>
+                <div class="col-md-6">
+                  <!-- Name input -->
+                  <div class="mb-3">
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-control" type="text" id="name" [(ngModel)]="user.name" name="name" required>
+                  </div>
+
+                  <!-- Email address input -->
+                  <div class="mb-3">
+                    <label class="form-label" for="email">Email:</label>
+                    <input class="form-control" type="email" id="email" [(ngModel)]="user.email" name="email" required>
+                  </div>
+
+                  <!-- Message input -->
+                  <div class="mb-3">
+                    <label class="form-label" for="message">Message:</label>
+                    <textarea class="form-control" id="message" [(ngModel)]="user.message" name="message" rows="4"
+                      required></textarea>
+                  </div>
+
+                  <div *ngIf="submitStatus" class="alert mt-3"
+                    [ngClass]="submitStatus.includes('Sorry') ? 'alert-danger' : 'alert-success'">
+                    {{ submitStatus }}
+                  </div>
+                </div>
+                <div class="col-md-6 p-3">
+                  <mat-icon class="contact-icon">email</mat-icon>
+                  <h2>Start Your Next Creative Project</h2>
+                  <p>Let’s create something exceptional together.
+                    If you’re looking for professional video work or
+                    a polished website or web app built from the ground up,
+                    feel free to reach out. Use the contact form to tell me
+                    about your project, and I’ll respond with a custom quote
+                    and project plan.</p>
+                </div>
               </div>
 
-              <!-- Email address input -->
-              <div class="mb-3">
-                <label class="form-label" for="email">Email:</label>
-                <input class="form-control" type="email" id="email" [(ngModel)]="user.email" name="email" required>
-              </div>
-
-              <!-- Message input -->
-              <div class="mb-3">
-                <label class="form-label" for="message">Message:</label>
-                <textarea class="form-control" id="message" [(ngModel)]="user.message"
-                          name="message" rows="4" required></textarea>
-              </div>
-
-              <div *ngIf="submitStatus" class="alert mt-3" [ngClass]="submitStatus.includes('Sorry') ? 'alert-danger' : 'alert-success'">
-                {{ submitStatus }}
-              </div>
-
-          </div>
+            </div>
             <div class="card-footer bg-blue-deep">
               <button class="btn btn-outline-light" type="submit" [disabled]="isSubmitting">
                 {{ isSubmitting ? 'Sending...' : 'Submit' }}
               </button>
             </div>
-        </form>
+          </form>
         </div>
       </div>
     </div>

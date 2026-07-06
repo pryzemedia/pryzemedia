@@ -6,6 +6,7 @@ import {Button} from 'component-lib';
 
 @Component({
     selector: 'app-button-grouping',
+    standalone: true,
     imports: [CommonModule, MatIconModule],
     templateUrl: './button-grouping.component.html',
     styleUrls: ['./button-grouping.component.css']

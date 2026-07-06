@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+
 
 @Component({
     selector: 'app-mat-button',
-    //imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet],
+    standalone: true,
     imports: [CommonModule],
     templateUrl: './mat-button.component.html',
     styleUrls: ['./mat-button.component.css']

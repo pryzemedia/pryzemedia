@@ -19,7 +19,7 @@ import { ContactComponent } from "./pages/contact/contact.component";
     WebComponent,
     VideoComponent,
     DesignComponent,
-    ContactComponent,
+    ContactComponent
 ],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']

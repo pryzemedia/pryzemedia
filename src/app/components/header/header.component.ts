@@ -5,6 +5,7 @@ import {MenuComponent} from "./menu/menu.component";
 
 @Component({
     selector: 'app-header',
+    standalone: true,
     imports: [CommonModule, MenuComponent],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css']
